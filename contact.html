@@ -1,0 +1,656 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="contact.css">
+    <style>
+        /* Styles for the Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.modal-content {
+   
+    background: #fff;
+    /* padding: 40px; */
+    border-radius: 10px;
+    position: relative;
+   
+}
+
+.close {
+    position: absolute;
+    top: 0px;
+    right: 17px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+
+<body>
+    <header class="px-[12px] lg:px-[32px] pt-[18px] w-full min-w-[320px] absolute top-0">
+        <div
+            class="flex-row flex justify-between items-center px-[30px] lg:px-[66px] rounded-[18px] bg-white shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
+            <div>
+                <img src="./assets/image/header_img.png" class="h-[55px] w-auto">
+            </div>
+
+            <div class="flex-row items-center flex relative">
+                <button
+                    class="inline-block md:hidden h-[40px] py-[8px] px-[20px] bg-[#002139] text-[white] text-center rounded-[8px]">Hambuger</button>
+                <ul
+                    class="absolute md:relative md:flex top-[50px] md:top-0 left-0 flex-col md:flex-row md:flex bg-white md:bg-transparent
+                md:shadow-none shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] rounded-[8px] py-[10px] md:py-0 px-[10px] md:py-0">
+                    <li class="px-[10px] pb-[10px] md:pb-0 flex items-center justify-center">
+                        <a href="">HOME</a>
+                    </li>
+                    <li class="px-[10px] pb-[10px] md:pb-0 flex items-center justify-center">
+                        <a href="">サービス</a>
+                    </li>
+                    <li class="px-[10px] pb-[10px] md:pb-0 flex items-center justify-center">
+                        <a href="">会社紹介</a>
+                    </li>
+                    <li class="px-[10px] pb-[10px] md:pb-0 flex items-center justify-center">
+                        <a href="">物件一覧</a>
+                    </li>
+                    <li
+                        class="h-[30px] md:h-[40px] py-[3px] md:py-[8px] px-[5px] md:px-[20px] ml-0 md:ml-[20px] bg-[#002139] text-[white] text-center rounded-[8px]">
+                        <a href="">お問い合わせ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+
+    <main  class="overflow-x-hidden">
+
+
+     <!-- this is modal  -->
+        <section class=" bg-white w-[60%] ">
+            <div id="myModal" class="modal">
+                <div
+                    class="modal-content w-[95%] px-6 md:px-10 py-6 md:py-10 lg:p-16 overflow-auto  mt-[80px] md:mt-[110px] md:w-[70%] lg:w-[60%] text-[9px] md:text-[11px]  shadow-xl  shaow-[white]">
+                    <span class="close hover:scale-110 duration-900 " onclick="closeModal()">&times;</span>
+                    <h2 class="font-extrabold mb-10">個人情報の取り扱いについて</h2>
+                    <div class="mb-3 color-[#000000]">
+                        <p>【個人情報の利用目的】</p>
+                        <p> 当社が取得したすべての個人情報は、お問い合わせに対する連絡を目的として利用します。</p>
+                    </div>
+                    <div class="mb-3 color-[#000000]">
+                        <p>【個人情報の提供・取扱いの委託】</p>
+                        <p> 取得した個人情報を第三者に提供・取り扱いの委託をすることはありません。</p>
+                    </div>
+                    <div class="mb-3 color-[#000000]">
+                        <p>個人情報の問い合わせ窓口</p>
+                        <p> 株式会社HIKARI ESTATE個人情報保護管理者　白石昌之 info@hikari.estate.co.jp</p>
+                    </div>
+                    <div class="mb-3 color-[#000000]">
+                        <p>【個人情報を入力するにあたっての注意事項】</p>
+                        <p>必須項目のご入力がない場合は、ご連絡出来ないことがありますので、予めご了承ください。
+                        </p>
+                    </div>
+                    <div class="mb-3 color-[#000000]">
+                        <p>【本人が容易に認識できない方法による個人情報の取得】</p>
+                        <p> クッキー (cookie)、ウェブビーコン (web beacon)、広告用識別子などの技術を使用して個人情報を取得する場合があります。
+
+                        </p>
+                    </div>
+                    <div class="mb-3 color-[#000000]">
+                        <p>【個人情報の安全管理措置について</p>
+                        <p>取得した個人情報については、漏えい、滅失またはき損の防止と是正、その他個人情報の安全管理のために必要かつ適切な措 置を講じます。このサイトは、SSL(Secure Socket
+                            Layer)による暗号化措置を講じています。
+
+                        </p>
+                    </div>
+                    <div class="mb-3 color-[#000000]">
+                        <p>【個人情報の開示等請求の手続き】</p>
+                        <p> 当社は当社が個人情報を取得したご本人、またはその代理人から、利用目的の通知、開示、内容の訂正、追加又は削除、利用
+                            の停止、消去及び第三者への提供の停止（「開示等」といいます。）を求められた場合、 所定の手続きにより、速やかに対応いたします。 </p>
+                    </div>
+                    <div class="mb-3 color-[#000000]">
+                        <p>【開示等の請求先】</p>
+                        <p> 開示等のご請求は、開示等ご請求窓口まで、電話またはe-mailでお申し込みください。当社所定の請求書を郵送いたします </p>
+                    </div>
+                    <div class="mb-3 color-[#000000]">
+                        <p>【開示等ご請求窓口】</p>
+                        <p>
+                            株式会社THINkBAL個人情報保護管理者 白石昌之info@hikari.estate.co.jp</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+          <!-- this is form  -->
+        <section class="bg-[url('./assets/image/contact_bg.png')]">
+            <div class="flex flex-col justify-center md:flex-row  mt-7 md:mt-0 pt-[30px] px-[30px] md:px-[70px] md:mt-28 md:mx-auto sm:gap-10 md:gap-0">
+                <!-- 1 -->
+                <div class="md::w-1/6 w-2/3 text-center mb-10 md:mb-0">
+                    <h1 class="text-[50px] md:text-[66px] text-white mt-[200px]">Contact</h1>
+                    <h2 class="text-[22px] md:text-[25px] text-white">お問い合わせ</h2>
+                </div>
+                <!-- 2  this is form  -->
+                <section>
+                    <form action=""
+                        class=" w-full bg-white px-7 py-9 md:px-16 md:py-6 rounded-lg shadow-lg shadow-[grey]">
+                        <h1 class="opacity-80 text-[15px] mb-10 md:mb-5 mt-10">
+                            ご相談・お問い合わせは下記メールフォームからご連絡ください。2営業日以内に担当者よりメールにてご連絡差し上げます。</h1>
+                        <!-- 1 base details  -->
+                        <div>
+
+
+                            <div
+                                class="flex flex-col md:flex-col lg:flex-row items-center gap-3 md:gap-0 justify-between mb-[27px]">
+                                <label class="opacity-90">
+
+                                    お名前 <span class="bg-[red] text-white px-1 ml-1 rounded-sm text-[13px]">必須</span>
+
+                                </label>
+                                <input
+                                    class="w-full sm:w-[calc(100%-132px)] md:w-full lg:w-[calc(100%-132px)] md:mt-3 rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none"
+                                    placeholder="お名前">
+                            </div>
+                            <div
+                                class="flex flex-col md:flex-col lg:flex-row items-center gap-3 md:gap-0 justify-between mb-[27px]">
+                                <label class="opacity-90">
+
+                                    会社名 <span class="bg-[red] text-white px-1 ml-1 rounded-sm text-[13px]">必須</span>
+
+                                </label>
+                                <input
+                                    class="w-full sm:w-[calc(100%-132px)] md:w-full lg:w-[calc(100%-132px)] md:mt-3 rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none"
+                                    placeholder="会社名">
+                            </div>
+                            <div
+                                class="flex flex-col md:flex-col lg:flex-row items-center gap-3 md:gap-0 justify-between mb-[27px]">
+                                <label class="opacity-90">
+
+                                    メールアドレス<span class="bg-[red] text-white px-1 ml-1 rounded-sm text-[13px]">必須</span>
+
+                                </label>
+                                <input
+                                    class="w-full sm:w-[calc(100%-132px)] md:w-full lg:w-[calc(100%-62px)] md:mt-3 rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none "
+                                    placeholder="メールアドレス">
+                            </div>
+                            <div
+                                class="flex flex-col md:flex-col lg:flex-row items-center gap-3 md:gap-0 justify-between mb-[27px]">
+                                <label class="opacity-90">
+
+                                    電話番号<span class="bg-[red] text-white px-1 ml-1 rounded-sm text-[13px]">必須</span>
+
+                                </label>
+                                <input
+                                    class="w-full sm:w-[calc(100%-132px)] md:w-full lg:w-[calc(100%-132px)] md:mt-3 rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none "
+                                    placeholder="電話番号をハイフンなしでご記入ください。">
+                            </div>
+
+                        </div>
+
+
+                        <!-- 2 about the place of sales concederation   -->
+                        <div class="mt-16">
+                            <h2 class="font-bold opacity-90 mb-8">●売却ご検討場所について</h2>
+
+                            <div
+                                class="flex flex-col md:flex-col lg:flex-row items-center gap-3 lg:gap-24 md:gap-10 justify-between mb-[27px]">
+                                <label class="opacity-90">
+
+                                    売却ご検討場所のご住所<span
+                                        class="bg-[red] text-white px-1.5 ml-1  rounded-sm text-[13px]">必須</span>
+                                    <span>〒</span>
+
+                                </label>
+                                <div class="w-full lg:w-[50%]  ">
+
+                                    <div class="flex flex-row gap-5 md:-ml-14 mx-auto xl:mt-20 lg:mt-10">
+                                        <input
+                                            class="w-full sm:w-[calc(100%-132px)] md:w-full lg:w-[calc(100%-132px)] md:mt-3 rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none ">
+                                        <span class="mt-3">_</span>
+                                        <input
+                                            class="w-full sm:w-[calc(100%-132px)] md:w-full lg:w-[calc(100%-132px)] md:mt-3 rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none ">
+                                    </div>
+                                    <div class="w-full  flex justify-start">
+                                        <input
+                                            class="w-full  md:mt-3 rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none mt-5 md:mt-0 mx-auto "
+                                            placeholder="売却ご検討場所のご住所">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .. -->
+                            <div
+                                class="flex flex-col md:flex-col lg:flex-row items-center gap-3 md:gap-10  mb-[27px] w-full">
+                                <label class="opacity-90 w-max  mt-4">
+
+                                    <span>建物の種類</span><span
+                                        class="bg-[red] px-2 text-white  ml-1 rounded-sm text-[13px]">必須</span>
+
+                                </label>
+                                <!-- this is radio button input  -->
+                                <div class="md:w-full w-full flex gap-4  flex-wrap ">
+                                    <div class="">
+                                        <input type="radio" id="戸建て" name="building-types"
+                                            class="md:mt-3 w-[19px] h-[19px] rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none  ">
+                                        <label class="text-[17px] mt-3" for="戸建て"> 戸建て</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="マンション" name="building-types"
+                                            class="md:mt-3 w-[19px] h-[19px] rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none  ">
+                                        <label class="text-[17px] mt-3" for="マンション"> マンション</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="アパート" name="building-types"
+                                            class="md:mt-3 w-[19px] h-[19px] rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none  ">
+                                        <label class="text-[17px] mt-3" for="アパート"> アパート</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="アパート" name="building-types"
+                                            class="md:mt-3 w-[19px] h-[19px] rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none  ">
+                                        <label class="text-[17px] mt-3" for="アパート">アパート</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex flex-col md:flex-col lg:flex-row items-center gap-3 md:gap-5 justify-between mb-[27px]">
+                                <label class="opacity-90 ">
+
+                                    部屋の間取り <span class="bg-[red] text-white px-1 ml-1 rounded-sm text-[13px]">必須</span>
+
+                                </label>
+                                <input
+                                    class="w-full sm:w-[calc(100%-132px)] md:w-full lg:w-[calc(100%-132px)] md:mt-3 rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none"
+                                    placeholder="部屋の間取り">
+                            </div>
+
+
+                        </div>
+
+                        <!-- desire date and time of the interview -->
+                        <div class="">
+                            <h2 class="font-bold opacity-90 mb-8">●売却ご検討場所について</h2>
+                            <!-- .  -->
+                            <div
+                                class="flex flex-col md:flex-col lg:flex-row items-start   gap-3 md:gap-0 justify-between mb-[27px]  ">
+                                <label class="opacity-90 mb-6 h-[10px] sm:mt-3">
+                                    第１希望<span
+                                        class="bg-[red] text-white px-1 ml-1 rounded-sm text-[13px] md:mr-5 lg:mr-0">必須</span>
+
+                                </label>
+                                <div
+                                    class="w-full md:w-[80%] flex flex-col md:ml-1 items-start justify-start  lg:ml-0 gap-2">
+                                    <input
+                                        class="w-full  md:mt-3 rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none "
+                                        placeholder="年 / 月 / 日">
+                                    <input type="text"
+                                        class="w-full  md:mt-3 rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none "
+                                        placeholder="希望の時間を選択してください。">
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex flex-col md:flex-col lg:flex-row items-start justify-start gap-3 md:gap-0 justify-between mb-[27px]  ">
+                                <label class=" mt-3 opacity-90 sm:mb-6 item">
+                                    第 2 希望
+
+                                </label>
+                                <div
+                                    class="w-full md:w-[80%] flex flex-col md:ml-1 items-start justify-start  lg:ml-0 gap-2">
+                                    <input
+                                        class="w-full  md:mt-3 rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none "
+                                        placeholder="年 / 月 / 日">
+                                    <input type="text"
+                                        class="w-full  md:mt-3 rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none "
+                                        placeholder="希望の時間を選択してください。">
+                                </div>
+                            </div>
+                            <div
+                                class="flex flex-col md:flex-col lg:flex-row items-start  gap-3 md:gap-0 justify-between mb-[27px]  ">
+                                <label class="opacity-90 mb-6 h-[10px] sm:mt-3">
+                                    第 3 希望<span
+                                        class="bg-[red] text-white px-1 ml-1 rounded-sm text-[13px] md:mr-5 lg:mr-0">必須</span>
+
+                                </label>
+                                <div
+                                    class="w-full md:w-[80%] flex flex-col md:ml-1 items-start justify-start  lg:ml-0 gap-2">
+                                    <input
+                                        class="w-full  md:mt-3 rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none "
+                                        placeholder="年 / 月 / 日">
+                                    <input type="text"
+                                        class="w-full  md:mt-3 rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none "
+                                        placeholder="希望の時間を選択してください。">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- LAST ......ABOUT CONTACT  FROM OUR COMPANY -->
+
+                        <div class="mt-16">
+                            <h2 class="font-bold opacity-90 mb-8">●売却ご検討場所について</h2>
+                            <div>
+                                <!-- .  -->
+                                <div
+                                    class="flex flex-col md:flex-col lg:flex-row items-start  gap-3 md:gap-8 justify-between mb-[27px]  ">
+                                    <label class="opacity-90 mb-6 h-[10px] sm:mt-3">
+                                        ご希望ご連絡方法<span
+                                            class="bg-[red] text-white px-1 ml-1 rounded-sm text-[13px] md:mr-5 lg:mr-0">必須</span>
+
+                                    </label>
+                                    <!-- this is radio button input  -->
+                                    <div class="md:w-full w-full flex gap-4  mb-6  md:gap-9 flex-wrap ">
+                                        <div class="">
+                                            <input type="radio" id="メール" name="contact-method"
+                                                class="md:mt-3 md:w-[20px] md:h-[20px] w-[18px] h-[18px]  rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none  ">
+                                            <label class="text-[17px] mt-3" for="メール"> メール</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="お電話" name="contact-method"
+                                                class="md:mt-3 md:w-[20px] md:h-[20px] w-[18px] h-[18px] rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none  ">
+                                            <label class="text-[17px] mt-3" for="お電話"> お電話</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="どちらでも" name="contact-method"
+                                                class="md:mt-3 md:w-[20px] md:h-[20px] w-[18px] h-[18px] rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none  ">
+                                            <label class="text-[17px] mt-3" for="どちらでも"> どちらでも</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div
+                                class="flex flex-col md:flex-col lg:flex-row items-start justify-start gap-3 md:gap-0 justify-between mb-[27px]  ">
+                                <label class=" mt-3  ml-3 opacity-90 sm:mb-6 ">
+                                    第１希望
+
+                                </label>
+                                <div
+                                    class="w-full md:w-[80%] flex flex-col md:ml-1 items-start justify-start  lg:ml-0 gap-2">
+                                    <input
+                                        class="w-full  md:mt-3 rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none "
+                                        placeholder="年 / 月 / 日">
+                                    <input type="text"
+                                        class="w-full  md:mt-3 rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none "
+                                        placeholder="希望の時間を選択してください。">
+                                </div>
+                                </div>
+                                <!-- THIS IS TEXTAREA   -->
+                                <div
+                                    class="flex flex-col md:flex-col  lg:flex-row items-start gap-3 md:gap-0 justify-between mb-[27px]">
+                                    <label class="opacity-90 sm:mr-8 md:mr-10 xl:mr-10">
+
+                                        ご不明点やご要望
+                                    </label>
+                                    <!-- <input type="textarea "
+                                        class="w-full md:mt-3 rounded-[15px] border-[2px] border-[rgba(20, 39, 74, 0.50)] py-[11px] px-[10px] outline-none py-[50px] "> -->
+                                    <textarea name="" id="" cols="30" rows="6"
+                                        class=" border-[2px] border-[rgba(20, 39, 74, 0.50)]  w-full "></textarea>
+                                </div>
+
+                                <!-- checkbox  -->
+                                <div class="w-full mt-10 md:ml-[0.5%]  lg:ml-[140px]">
+                                    <input type="checkbox" id="termsCheckbox"
+                                        class="form-checkbox h-5 w-5 text-[#4B5563]">
+                                    <label for="termsCheckbox"
+                                        class="ml-2 text-[#4B5563]">
+                                    <span href="#" class="text-[blue] link cursor-pointer hover:font-bold hover:border-b border-[black] pb-2">個人情報の取り扱い</span> <span>についてに同意のうえ、お問い合わせください。</span>
+                                    </label>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                        <button  type="submit"
+                            class=" hover:scale-105 duration-700 text-center bg-[#F9995D] md:px-16 px-12 text-white py-3 md:py-4 rounded-2xl mt-16 mb-6
+                             ml-[30%]  xl:ml-[44%] ">
+                            送 信
+                        </button>
+
+
+
+
+                    </form>
+                </section>
+            </div>
+
+            <div class="mt-[150px]">
+                <img src="./assets/image/contact_bg_b.png" class="w-full h-auto">
+            </div>
+
+        </section>
+    </main>
+
+
+
+
+
+
+
+    <footer class="min-w-[320px]">
+        <div class="flex px-[30px] sm:px-[30px] lg:px-[100px] xl:px-[150px]">
+            <div class="hidden md:block w-1/2">
+                <div>
+                    <img src="./assets/image/header_img.png" class="w-[200px] h-auto">
+                </div>
+                <div class="w-[90%] mt-[30px]">
+                    <p class="text-[#242323] text-[13px]">
+                        不動産取引は非常に高額なものであり、ほとんどの方にとって関わることは多くありません。不動産を売りたい、買いたい、借りたいどれをとっても同じ物件はございません。同じようにその人の想い、背景もそれぞれ異なります。インターネットやAI等の普及により人と人との距離が離れつつある現代だからこそ私たちはお客様1人1人のご縁に感謝し、不動産だけではなく人生のパートナーとしての不動産屋を目指します。
+                    </p>
+                </div>
+                <div class="mt-[20px] mb-[45px]">
+                    <ul class="flex">
+                        <li class="pr-[32px]">
+                            <a class="h-[50px] min-w-[50px] flex items-center justify-center bg-gray-200 text-black rounded-full"
+                                href="#">
+                                <i class="fa-brands fa-google"></i>
+                            </a>
+                        </li>
+                        <li class="pr-[32px]">
+                            <a class="h-[50px] min-w-[50px] flex items-center justify-center bg-gray-200 text-black rounded-full"
+                                href="#">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="pr-[32px]">
+                            <a class="h-[50px] min-w-[50px] flex items-center justify-center bg-gray-200 text-black rounded-full"
+                                href="#">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hidden md:block w-1/2 pt-[50px]">
+                <div>
+                    <ul class="flex">
+                        <li class="px-[10px] lg:px-[15px]">
+                            <a href="">HOME</a>
+                        </li>
+                        <li class="px-[10px] lg:px-[15px]">
+                            <a href="">サービス</a>
+                        </li>
+                        <li class="px-[10px] lg:px-[15px]">
+                            <a href="">会社紹介</a>
+                        </li>
+                        <li class="px-[10px] lg:px-[15px]">
+                            <a href="">物件一覧</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="pt-[60px]">
+                    <ul>
+                        <li class="pb-[5px] flex items-center">
+                            <a class="h-[50px] min-w-[50px] flex items-center justify-center bg-[#10AC84] text-white rounded-full"
+                                href="#">
+                                <i class="text-[25px] fa-solid fa-phone"></i>
+                            </a>
+                            <span class="ml-[15px]">+123 454564446</span>
+                        </li>
+                        <li class="pb-[5px] flex items-center">
+                            <a class="h-[50px] min-w-[50px] flex items-center justify-center bg-[#10AC84] text-white rounded-full"
+                                href="#">
+                                <i class="text-[25px] fa-solid fa-paper-plane"></i>
+                            </a>
+                            <span class="ml-[15px]">example@gmail.com</span>
+                        </li>
+                        <li class="pb-[5px] flex items-center">
+                            <a class="h-[50px] min-w-[50px] flex items-center justify-center bg-[#10AC84] text-white rounded-full"
+                                href="#">
+                                <i class="text-[25px] fa-sharp fa-solid fa-location-dot"></i>
+                            </a>
+                            <span class="ml-[15px]">
+                                神奈川県川崎市川崎区京町1丁目3-10千代田ビル102号室
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="block md:hidden">
+                <div>
+                    <img src="./assets/image/header_img.png" class="w-[200px] h-auto">
+                </div>
+                <div class="mt-[30px]">
+                    <ul class="flex text-[14px]">
+                        <li class="px-[8px] lg:px-[15px]">
+                            <a href="">HOME</a>
+                        </li>
+                        <li class="px-[8px] lg:px-[15px]">
+                            <a href="">サービス</a>
+                        </li>
+                        <li class="px-[8px] lg:px-[15px]">
+                            <a href="">会社紹介</a>
+                        </li>
+                        <li class="px-[8px] lg:px-[15px]">
+                            <a href="">物件一覧</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-[30px]">
+                    <p class="text-[#242323] text-[13px]">
+                        不動産取引は非常に高額なものであり、ほとんどの方にとって関わることは多くありません。不動産を売りたい、買いたい、借りたいどれをとっても同じ物件はございません。同じようにその人の想い、背景もそれぞれ異なります。インターネットやAI等の普及により人と人との距離が離れつつある現代だからこそ私たちはお客様1人1人のご縁に感謝し、不動産だけではなく人生のパートナーとしての不動産屋を目指します。
+                    </p>
+                </div>
+                <div class="pt-[30px]">
+                    <ul>
+                        <li class="pb-[5px] flex items-center">
+                            <a class="h-[50px] min-w-[50px] flex items-center justify-center bg-[#10AC84] text-white rounded-full"
+                                href="#">
+                                <i class="text-[25px] fa-solid fa-phone"></i>
+                            </a>
+                            <span class="ml-[15px]">+123 454564446</span>
+                        </li>
+                        <li class="pb-[5px] flex items-center">
+                            <a class="h-[50px] min-w-[50px] flex items-center justify-center bg-[#10AC84] text-white rounded-full"
+                                href="#">
+                                <i class="text-[25px] fa-solid fa-paper-plane"></i>
+                            </a>
+                            <span class="ml-[15px]">example@gmail.com</span>
+                        </li>
+                        <li class="pb-[5px] flex items-center">
+                            <a class="h-[50px] min-w-[50px] flex items-center justify-center bg-[#10AC84] text-white rounded-full"
+                                href="#">
+                                <i class="text-[25px] fa-sharp fa-solid fa-location-dot"></i>
+                            </a>
+                            <span class="ml-[15px]">
+                                神奈川県川崎市川崎区京町1丁目3-10千代田ビル102号室
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-[20px] mb-[45px]">
+                    <ul class="flex">
+                        <li class="pr-[32px]">
+                            <a class="h-[50px] min-w-[50px] flex items-center justify-center bg-gray-200 text-black rounded-full"
+                                href="#">
+                                <i class="fa-brands fa-google"></i>
+                            </a>
+                        </li>
+                        <li class="pr-[32px]">
+                            <a class="h-[50px] min-w-[50px] flex items-center justify-center bg-gray-200 text-black rounded-full"
+                                href="#">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="pr-[32px]">
+                            <a class="h-[50px] min-w-[50px] flex items-center justify-center bg-gray-200 text-black rounded-full"
+                                href="#">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-white text-[14px] md:text-[18px] text-center py-[30px] bg-black">
+            <h4 class="opacity-70">
+                2023 Copyright © Hikari Estate Co.,LTD All Right Reserved.
+            </h4>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Show the modal when the document is loaded
+            openModal();
+        });
+
+        function openModal() {
+            document.getElementById('myModal').style.display = 'flex';
+            document.body.style.overflow = "hidden";  
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+            document.body.style.overflow = "auto"
+        }
+
+       checkBoxLink  = document.querySelector(".link");
+
+       checkBoxLink.addEventListener('click', function () {
+            // Show the modal when the document is loaded
+            openModal();
+        });
+
+
+
+        // Close the modal when clicking outside of it
+        window.addEventListener('click', function (event) {
+            const modal = document.getElementById('myModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+    </script>
+</body>
+
+</html>
