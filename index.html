@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="contact.css">
     <style>
         /* Styles for the Modal */
+
+
+        .modal-content::-webkit-scrollbar {
+            display: none;
+        }
 .modal {
     display: none;
     position: fixed;
@@ -84,9 +89,9 @@
 
      <!-- this is modal  -->
         <section class=" bg-white w-[60%] ">
-            <div id="myModal" class="modal">
+            <div id="myModal" class="modal ">
                 <div
-                    class="modal-content w-[95%] px-6 md:px-10 py-6 md:py-10 lg:p-16 overflow-auto  mt-[80px] md:mt-[110px] md:w-[70%] lg:w-[60%] text-[9px] md:text-[11px]  shadow-xl  shaow-[white]">
+                    class="modal-content w-[95%] px-6 md:px-10 h-[75%] py-6 md:py-10 lg:p-16 overflow-auto  mt-[80px] md:mt-[110px] md:w-[70%] lg:w-[60%] text-[11px] md:text-[13px]  shadow-xl  shaow-[white]">
                     <span class="close hover:scale-110 duration-900 " onclick="closeModal()">&times;</span>
                     <h2 class="font-extrabold mb-10">個人情報の取り扱いについて</h2>
                     <div class="mb-3 color-[#000000]">
